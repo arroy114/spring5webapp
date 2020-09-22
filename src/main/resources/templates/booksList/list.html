@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Framework Guru</title>
+</head>
+<body>
+<h1>Book List</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Publisher</th>
+    </tr>
+    <!--th:each iterate the object, e.g iterate through ${books} and name book each}-->
+    <tr th:each="book : ${books}"> <!-- ${attributeName} return the attribute of the returned model from controller-->
+        <th th:text="${book.id}">123</th> <!--content of this tag will be replaced by content in ${book.id}-->
+        <th th:text="${book.title}">Spring in Action</th>
+        <th th:text="${book.publisher.name}">Wrox</th>
+    </tr>
+</table>
+
+
+</body>
+</html>
